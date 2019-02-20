@@ -1,9 +1,12 @@
 stages:
 - name: build
   steps:
-  - runScriptConfig:
-      image: golang:latest
-      shellScript: docker build -t apcenter/hc .
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile.apline
+      buildContext: .
+      tag: apcenter/hc
+      pushRemote: true
+      registry: index.docker.io
   when:
     branch:
       include:
