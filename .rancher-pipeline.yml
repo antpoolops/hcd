@@ -1,0 +1,11 @@
+stages:
+- name: build
+  steps:
+  - runScriptConfig:
+      image: golang:latest
+      shellScript: docker build -t apcenter/hc .
+  when:
+    branch:
+      include:
+      - master
+timeout: 60
