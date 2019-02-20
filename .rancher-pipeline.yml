@@ -2,7 +2,7 @@ stages:
 - name: build
   steps:
   - publishImageConfig:
-      dockerfilePath: ./Dockerfile.apline
+      dockerfilePath: ./Dockerfile.alpine
       buildContext: .
       tag: apcenter/hc
       pushRemote: true
